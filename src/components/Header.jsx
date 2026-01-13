@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import logo from '../assets/logo.jpg';
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,7 +22,7 @@ const Header = () => {
                 <div className="flex items-center justify-between">
                     {/* Logo with Icon and Company Name */}
                     <Link to="/" className="flex items-center gap-3">
-                        <img src="/logo.jpg" alt="City Office Needs Logo" className="h-12 md:h-14" />
+                        <img src={logo} alt="City Office Needs Logo" className="h-12 md:h-14" />
                         <div>
                             <h1 className="text-xl md:text-2xl font-bold text-slate-900 leading-tight">
                                 City Office Needs
