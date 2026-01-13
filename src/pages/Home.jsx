@@ -27,7 +27,7 @@ const Home = () => {
     ];
 
     const stats = [
-        { icon: <Award size={32} />, value: '5+', label: 'Years Experience' },
+        { icon: <Award size={32} />, value: '20+', label: 'Years Experience' },
         { icon: <Star size={32} />, value: '100+', label: 'Happy Clients' },
         { icon: <CheckCircle size={32} />, value: '100%', label: 'Quality Assured' },
         { icon: <TrendingUp size={32} />, value: '24/7', label: 'Support Available' },
@@ -50,7 +50,7 @@ const Home = () => {
                                 <span className="text-gray-300">for Schools & Offices</span>
                             </h1>
                             <p className="text-lg md:text-xl mb-6 text-gray-300">
-                                Providing high-quality educational boards, furniture, and play equipment since 2025
+                                Providing high-quality educational boards, furniture, and play equipment since 2006
                             </p>
                             <div className="flex flex-wrap gap-4">
                                 <a
@@ -209,7 +209,7 @@ const Home = () => {
                             </h2>
                             <div className="grid md:grid-cols-3 gap-6">
                                 {[
-                                    { title: 'Trusted Since 2025', desc: 'Over 50 years of excellence and reliability' },
+                                    { title: 'Trusted Since 2006', desc: 'Over 20 years of excellence and reliability' },
                                     { title: 'Quality Products', desc: 'High-quality, durable infrastructure solutions' },
                                     { title: 'Custom Solutions', desc: 'Tailored to your specific requirements' },
                                     { title: 'Expert Support', desc: 'Dedicated customer service team' },

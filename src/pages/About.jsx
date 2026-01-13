@@ -3,7 +3,7 @@ import { Award, Shield, Users, Sparkles, CheckCircle, Target, Heart, Zap } from 
 
 const About = () => {
     const features = [
-        { icon: <Award size={28} />, title: 'Since 2025', description: 'Over 50 years of excellence' },
+        { icon: <Award size={28} />, title: 'Since 2006', description: 'Over 20 years of excellence' },
         { icon: <Shield size={28} />, title: 'Quality Assured', description: 'High-quality products' },
         { icon: <Users size={28} />, title: 'Customer First', description: 'Dedicated support' },
         { icon: <Sparkles size={28} />, title: 'Custom Solutions', description: 'Tailored to your needs' },
@@ -19,7 +19,7 @@ const About = () => {
         { icon: <Target size={24} />, title: 'Quality', desc: 'We never compromise on quality' },
         { icon: <Heart size={24} />, title: 'Customer Satisfaction', desc: 'Your happiness is our priority' },
         { icon: <Zap size={24} />, title: 'Innovation', desc: 'Modern solutions for modern needs' },
-        { icon: <CheckCircle size={24} />, title: 'Reliability', desc: 'Trusted by thousands since 2025' },
+        { icon: <CheckCircle size={24} />, title: 'Reliability', desc: 'Trusted by thousands since 2006' },
     ];
 
     return (
@@ -41,7 +41,7 @@ const About = () => {
                         transition={{ duration: 0.6, delay: 0.2 }}
                         className="text-lg text-gray-300"
                     >
-                        Building excellence since 2025 • Coimbatore's Premier Infrastructure Provider
+                        Building excellence since 2006 • Coimbatore's Premier Infrastructure Provider
                     </motion.p>
                 </div>
             </section>
@@ -140,8 +140,8 @@ const About = () => {
                                 className="bg-slate-900 text-white rounded-xl p-6 text-center"
                             >
                                 <div className="text-5xl mb-3">🏆</div>
-                                <h2 className="text-3xl font-bold mb-2">Since 2025</h2>
-                                <p className="text-gray-300 mb-4">Over 5+ years of excellence</p>
+                                <h2 className="text-3xl font-bold mb-2">Since 2006</h2>
+                                <p className="text-gray-300 mb-4">Over 20 years of excellence</p>
                                 <div className="grid grid-cols-1 gap-3 text-sm">
                                     <div className="bg-white/10 rounded-lg p-2">
                                         <div className="text-2xl font-bold">100+</div>
