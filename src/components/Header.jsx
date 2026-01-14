@@ -17,17 +17,14 @@ const Header = () => {
     const isActive = (path) => location.pathname === path;
 
     return (
-        <header className="bg-white backdrop-blur-md text-slate-900 sticky top-0 z-50 shadow-md border-b-2 border-slate-200">
+        <header className="glass sticky top-0 z-50 shadow-xl border-b-2 border-white/30">
             <nav className="container mx-auto px-4 py-3">
                 <div className="flex items-center justify-between">
-                    {/* Logo with Icon and Company Name */}
+                    {/* Logo */}
                     <Link to="/" className="flex items-center gap-3">
-                        <img src={logo} alt="City Office Needs Logo" className="h-12 md:h-14" />
+                        <img src={logo} alt="City Office Needs Logo" className="h-12 md:h-14 drop-shadow-lg" />
                         <div>
-                            <h1 className="text-xl md:text-2xl font-bold text-slate-900 leading-tight">
-                                City Office Needs
-                            </h1>
-                            <p className="text-xs text-slate-700 hidden md:block font-medium">Since 2006 • Complete Infrastructure Solutions</p>
+                            <p className="text-xs text-blue-700 hidden md:block font-semibold">Since 2006 • Complete Infrastructure Solutions</p>
                         </div>
                     </Link>
 
@@ -37,7 +34,9 @@ const Header = () => {
                             <Link
                                 key={link.path}
                                 to={link.path}
-                                className={`hover:text-slate-900 transition-colors duration-200 font-medium text-sm ${isActive(link.path) ? 'text-slate-900 border-b-2 border-slate-900 pb-1 font-bold' : 'text-slate-700'
+                                className={`hover:text-blue-700 transition-all duration-200 font-semibold text-sm ${isActive(link.path)
+                                        ? 'text-glossy-gold border-b-2 border-amber-500 pb-1'
+                                        : 'text-blue-900'
                                     }`}
                             >
                                 {link.name}
@@ -45,7 +44,7 @@ const Header = () => {
                         ))}
                         <a
                             href="tel:+919842250600"
-                            className="bg-slate-900 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-slate-800 transition-colors duration-200"
+                            className="btn-glossy-gold text-white px-4 py-2 rounded-xl text-sm font-bold"
                         >
                             📞 Call Now
                         </a>
@@ -53,7 +52,7 @@ const Header = () => {
 
                     {/* Mobile Menu Button */}
                     <button
-                        className="md:hidden text-slate-900"
+                        className="md:hidden text-blue-900"
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
                         aria-label="Toggle menu"
                     >
@@ -63,12 +62,12 @@ const Header = () => {
 
                 {/* Mobile Navigation */}
                 {isMenuOpen && (
-                    <div className="md:hidden mt-4 pb-4 space-y-2 border-t border-slate-200 pt-4">
+                    <div className="md:hidden mt-4 pb-4 space-y-2 glass rounded-xl p-4 mt-2">
                         {navLinks.map((link) => (
                             <Link
                                 key={link.path}
                                 to={link.path}
-                                className={`block py-2 hover:text-slate-900 transition-colors duration-200 ${isActive(link.path) ? 'font-bold text-slate-900' : 'text-slate-700'
+                                className={`block py-2 hover:text-blue-700 transition-colors duration-200 font-semibold ${isActive(link.path) ? 'text-glossy-gold' : 'text-blue-900'
                                     }`}
                                 onClick={() => setIsMenuOpen(false)}
                             >
@@ -77,7 +76,7 @@ const Header = () => {
                         ))}
                         <a
                             href="tel:+919842250600"
-                            className="block bg-slate-900 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-slate-800 transition-colors duration-200 text-center mt-2"
+                            className="block btn-glossy-gold text-white px-4 py-2 rounded-xl text-sm font-bold text-center mt-2"
                         >
                             📞 Call Now
                         </a>

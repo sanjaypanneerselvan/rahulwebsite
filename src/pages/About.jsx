@@ -23,15 +23,16 @@ const About = () => {
     ];
 
     return (
-        <div className="bg-white">
-            {/* Hero Section - Compact */}
-            <section className="bg-slate-900 text-white py-12">
-                <div className="container mx-auto px-4 text-center">
+        <div className="min-h-screen">
+            {/* Hero Section - Glossy Blue */}
+            <section className="glossy-blue text-white py-16 relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+                <div className="container mx-auto px-4 text-center relative z-10">
                     <motion.h1
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
-                        className="text-3xl md:text-4xl font-bold mb-2"
+                        className="text-4xl md:text-5xl font-bold mb-3 drop-shadow-lg"
                     >
                         Your Trusted Partner in Infrastructure
                     </motion.h1>
@@ -39,7 +40,7 @@ const About = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
-                        className="text-lg text-gray-300"
+                        className="text-lg text-blue-100"
                     >
                         Building excellence since 2006 • Coimbatore's Premier Infrastructure Provider
                     </motion.p>

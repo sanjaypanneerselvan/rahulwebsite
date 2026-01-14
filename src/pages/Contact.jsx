@@ -54,12 +54,13 @@ const Contact = () => {
     ];
 
     return (
-        <div className="bg-white">
-            {/* Hero Section - Compact */}
-            <section className="bg-slate-900 text-white py-10">
-                <div className="container mx-auto px-4 text-center">
-                    <h1 className="text-3xl md:text-4xl font-bold mb-2">Contact Us</h1>
-                    <p className="text-lg text-gray-300">We're here to help • Get in touch with us today</p>
+        <div className="min-h-screen">
+            {/* Hero Section - Glossy Blue */}
+            <section className="glossy-blue text-white py-14 relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+                <div className="container mx-auto px-4 text-center relative z-10">
+                    <h1 className="text-4xl md:text-5xl font-bold mb-3 drop-shadow-lg">Contact Us</h1>
+                    <p className="text-lg text-blue-100">We're here to help • Get in touch with us today</p>
                 </div>
             </section>
 
@@ -225,7 +226,7 @@ const Contact = () => {
 
                                     <button
                                         type="submit"
-                                        className="w-full bg-primary-600 text-white py-3 rounded-lg font-semibold hover:bg-primary-700 transition-all duration-200 shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
+                                        className="w-full btn-glossy-gold text-white py-4 rounded-2xl font-bold flex items-center justify-center gap-2"
                                     >
                                         <Send size={18} />
                                         Send Message
@@ -240,7 +241,7 @@ const Contact = () => {
                                     <div className="flex flex-wrap justify-center gap-3">
                                         <a
                                             href="tel:+919842250600"
-                                            className="inline-flex items-center gap-2 bg-primary-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-primary-700 transition-colors"
+                                            className="inline-flex items-center gap-2 btn-glossy-blue text-white px-5 py-3 rounded-xl text-sm font-bold"
                                         >
                                             <Phone size={16} />
                                             Call Now

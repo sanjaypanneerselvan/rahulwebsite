@@ -34,35 +34,36 @@ const Home = () => {
     ];
 
     return (
-        <div className="bg-white">
-            {/* Hero Section - Reduced padding */}
-            <section className="bg-slate-900 text-white py-16 md:py-20">
-                <div className="container mx-auto px-4">
+        <div className="min-h-screen">
+            {/* Hero Section - Glossy Blue */}
+            <section className="glossy-blue text-white py-20 md:py-24 relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+                <div className="container mx-auto px-4 relative z-10">
                     <div className="grid md:grid-cols-2 gap-8 items-center">
                         <motion.div
                             initial={{ opacity: 0, x: -20 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.6 }}
                         >
-                            <h1 className="text-3xl md:text-5xl font-bold mb-4 leading-tight">
+                            <h1 className="text-4xl md:text-6xl font-bold mb-4 leading-tight drop-shadow-lg">
                                 Complete Infrastructure Solutions
                                 <br />
-                                <span className="text-gray-300">for Schools & Offices</span>
+                                <span className="text-blue-100">for Schools & Offices</span>
                             </h1>
-                            <p className="text-lg md:text-xl mb-6 text-gray-300">
+                            <p className="text-lg md:text-xl mb-6 text-blue-100">
                                 Providing high-quality educational boards, furniture, and play equipment since 2006
                             </p>
                             <div className="flex flex-wrap gap-4">
                                 <a
                                     href="/products"
-                                    className="inline-flex items-center gap-2 bg-white text-slate-900 px-6 py-3 rounded-xl font-semibold hover:bg-slate-100 transition-all duration-200 shadow-lg border-2 border-slate-900"
+                                    className="btn-glossy-gold text-white px-8 py-4 rounded-2xl font-bold inline-flex items-center gap-2"
                                 >
                                     Explore Products
-                                    <ArrowRight size={20} />
+                                    <ArrowRight size={22} />
                                 </a>
                                 <a
                                     href="/contact"
-                                    className="inline-flex items-center gap-2 bg-primary-800 text-white px-6 py-3 rounded-xl font-semibold hover:bg-primary-900 transition-all duration-200"
+                                    className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm text-white px-8 py-4 rounded-2xl font-bold hover:bg-white/30 transition-all duration-200 border-2 border-white/30"
                                 >
                                     Get Quote
                                 </a>
@@ -77,12 +78,12 @@ const Home = () => {
                             className="grid grid-cols-2 gap-4"
                         >
                             {stats.map((stat, index) => (
-                                <div key={index} className="bg-white/10 backdrop-blur-sm p-4 rounded-xl text-center">
-                                    <div className="flex justify-center mb-2 text-gray-300">
+                                <div key={index} className="glass p-5 rounded-2xl text-center border-2 border-white/20">
+                                    <div className="flex justify-center mb-2 text-amber-300">
                                         {stat.icon}
                                     </div>
-                                    <div className="text-2xl font-bold mb-1">{stat.value}</div>
-                                    <div className="text-sm text-gray-300">{stat.label}</div>
+                                    <div className="text-3xl font-bold mb-1">{stat.value}</div>
+                                    <div className="text-sm text-blue-100">{stat.label}</div>
                                 </div>
                             ))}
                         </motion.div>
@@ -90,20 +91,19 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* Sectors Section - Reduced padding */}
-            <section className="py-12 bg-primary-50">
+            {/* Sectors Section */}
+            <section className="py-16">
                 <div className="container mx-auto px-4">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.5 }}
-                        className="text-center mb-8"
-                    >
-                        <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-2">
+                        className="text-center mb-10">
+                        <h2 className="text-4xl md:text-5xl font-bold text-glossy-blue mb-3">
                             Our Sectors
                         </h2>
-                        <p className="text-slate-600 text-lg">
+                        <p className="text-blue-800 text-lg">
                             Comprehensive solutions for every infrastructure need
                         </p>
                     </motion.div>
@@ -116,22 +116,22 @@ const Home = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                                className="bg-white p-6 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-primary-100"
+                                className="premium-card p-8 rounded-2xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
                             >
                                 <div className="flex items-center gap-3 mb-4">
-                                    <span className="text-4xl">{sector.emoji}</span>
-                                    <div className="text-primary-600">
+                                    <span className="text-5xl">{sector.emoji}</span>
+                                    <div className="text-blue-600">
                                         {sector.icon}
                                     </div>
                                 </div>
-                                <h3 className="text-xl font-bold mb-2 text-slate-900">
+                                <h3 className="text-2xl font-bold mb-3 text-blue-900">
                                     {sector.title}
                                 </h3>
-                                <p className="text-slate-600 mb-4 text-sm">{sector.description}</p>
+                                <p className="text-blue-800 mb-4">{sector.description}</p>
                                 <ul className="space-y-2">
                                     {sector.features.map((feature, idx) => (
-                                        <li key={idx} className="flex items-center gap-2 text-sm text-slate-700">
-                                            <CheckCircle size={16} className="text-primary-600" />
+                                        <li key={idx} className="flex items-center gap-2 text-blue-900 font-medium">
+                                            <CheckCircle size={18} className="text-amber-500" />
                                             {feature}
                                         </li>
                                     ))}
@@ -142,19 +142,19 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* Product Highlights - New Section */}
-            <section className="py-12 bg-white">
+            {/* Product Highlights */}
+            <section className="py-16">
                 <div className="container mx-auto px-4">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-center mb-8"
+                        className="text-center mb-10"
                     >
-                        <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-2">
+                        <h2 className="text-4xl md:text-5xl font-bold text-glossy-blue mb-3">
                             Featured Products
                         </h2>
-                        <p className="text-slate-600 text-lg">
+                        <p className="text-blue-800 text-lg">
                             Popular choices from our extensive catalog
                         </p>
                     </motion.div>
@@ -172,12 +172,12 @@ const Home = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                                className="bg-gradient-to-br from-primary-50 to-white p-6 rounded-xl border border-primary-100 hover:shadow-lg transition-shadow"
+                                className="premium-card p-6 rounded-2xl hover:shadow-2xl transition-all transform hover:-translate-y-1"
                             >
                                 <div className="text-5xl mb-3 text-center">{product.emoji}</div>
-                                <h3 className="font-bold text-lg text-slate-900 mb-1">{product.name}</h3>
-                                <p className="text-sm text-slate-600 mb-2">{product.code}</p>
-                                <p className="text-primary-600 font-bold">{product.price}</p>
+                                <h3 className="font-bold text-lg text-blue-900 mb-1">{product.name}</h3>
+                                <p className="text-sm text-blue-700 mb-2">{product.code}</p>
+                                <p className="text-glossy-gold font-bold text-lg">{product.price}</p>
                             </motion.div>
                         ))}
                     </div>
@@ -185,26 +185,26 @@ const Home = () => {
                     <div className="text-center mt-8">
                         <a
                             href="/products"
-                            className="inline-flex items-center gap-2 bg-slate-900 text-white px-6 py-3 rounded-xl font-semibold hover:bg-slate-800 transition-colors"
+                            className="btn-glossy-blue text-white px-8 py-4 rounded-2xl font-bold inline-flex items-center gap-2"
                         >
                             View All Products
-                            <ArrowRight size={20} />
+                            <ArrowRight size={22} />
                         </a>
                     </div>
                 </div>
             </section>
 
-            {/* Why Choose Us - Compact */}
-            <section className="py-12 bg-primary-50">
+            {/* Why Choose Us */}
+            <section className="py-16">
                 <div className="container mx-auto px-4">
                     <div className="max-w-5xl mx-auto">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="bg-white p-8 rounded-xl shadow-sm border border-primary-100"
+                            className="premium-card p-10 rounded-3xl"
                         >
-                            <h2 className="text-2xl md:text-3xl font-bold mb-6 text-slate-900 text-center">
+                            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-glossy-blue text-center">
                                 Why Choose City Office Needs?
                             </h2>
                             <div className="grid md:grid-cols-3 gap-6">
@@ -217,10 +217,10 @@ const Home = () => {
                                     { title: 'Fast Delivery', desc: 'Timely delivery across Coimbatore' },
                                 ].map((item, index) => (
                                     <div key={index} className="flex gap-3">
-                                        <CheckCircle className="text-primary-600 flex-shrink-0 mt-1" size={20} />
+                                        <CheckCircle className="text-amber-500 flex-shrink-0 mt-1" size={22} />
                                         <div>
-                                            <h3 className="font-semibold text-slate-900 mb-1">{item.title}</h3>
-                                            <p className="text-sm text-slate-600">{item.desc}</p>
+                                            <h3 className="font-bold text-blue-900 mb-1">{item.title}</h3>
+                                            <p className="text-sm text-blue-800">{item.desc}</p>
                                         </div>
                                     </div>
                                 ))}
@@ -230,31 +230,32 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* CTA Section - Compact */}
-            <section className="bg-slate-900 text-white py-12">
-                <div className="container mx-auto px-4 text-center">
+            {/* CTA Section */}
+            <section className="glossy-blue text-white py-16 relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+                <div className="container mx-auto px-4 text-center relative z-10">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="text-3xl md:text-4xl font-bold mb-3">
+                        <h2 className="text-4xl md:text-5xl font-bold mb-4 drop-shadow-lg">
                             Ready to Transform Your Space?
                         </h2>
-                        <p className="text-lg md:text-xl mb-6 text-gray-300">
+                        <p className="text-lg md:text-xl mb-8 text-blue-100">
                             Contact us today for customized infrastructure solutions
                         </p>
                         <div className="flex flex-wrap justify-center gap-4">
                             <a
                                 href="/contact"
-                                className="inline-flex items-center gap-2 bg-white text-slate-900 px-6 py-3 rounded-xl font-semibold hover:bg-slate-100 transition-all duration-200 shadow-lg border-2 border-white"
+                                className="btn-glossy-gold text-white px-8 py-4 rounded-2xl font-bold inline-flex items-center gap-2"
                             >
                                 Get in Touch
-                                <ArrowRight size={20} />
+                                <ArrowRight size={22} />
                             </a>
                             <a
                                 href="tel:+919842250600"
-                                className="inline-flex items-center gap-2 bg-slate-700 text-white px-6 py-3 rounded-xl font-semibold hover:bg-slate-600 transition-all duration-200"
+                                className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm text-white px-8 py-4 rounded-2xl font-bold hover:bg-white/30 transition-all duration-200 border-2 border-white/30"
                             >
                                 📞 +91 98422 50600
                             </a>

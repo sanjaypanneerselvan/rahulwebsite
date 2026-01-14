@@ -354,25 +354,26 @@ const Products = () => {
     };
 
     return (
-        <div className="bg-white">
-            {/* Hero Section */}
-            <section className="bg-slate-900 text-white py-10">
-                <div className="container mx-auto px-4 text-center">
-                    <h1 className="text-3xl md:text-4xl font-bold mb-2">Our Products</h1>
-                    <p className="text-lg text-gray-300 mb-4">Quality office solutions • {products.length} Products Available</p>
+        <div className="min-h-screen">
+            {/* Hero Section - Glossy Blue */}
+            <section className="glossy-blue text-white py-12 relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+                <div className="container mx-auto px-4 text-center relative z-10">
+                    <h1 className="text-4xl md:text-5xl font-bold mb-3 drop-shadow-lg">Our Products</h1>
+                    <p className="text-lg text-blue-100 mb-6">Quality office solutions • {products.length} Products Available</p>
                     <a
                         href={pamphletPDF}
                         download="City-Office-Needs-Chair-Pamphlet.pdf"
-                        className="inline-flex items-center gap-2 bg-white text-slate-900 px-6 py-3 rounded-xl font-semibold hover:bg-slate-100 transition-colors duration-200 shadow-lg"
+                        className="btn-glossy-gold text-white px-8 py-4 rounded-2xl font-bold inline-flex items-center gap-2"
                     >
-                        <Download size={20} />
+                        <Download size={22} />
                         Download Pamphlet
                     </a>
                 </div>
             </section>
 
             {/* Filter Bar */}
-            <section className="py-4 bg-white sticky top-[65px] z-40 border-b-2 border-primary-100 shadow-sm">
+            <section className="py-4 glass sticky top-[65px] z-40 border-b-2 border-white/30 shadow-lg">
                 <div className="container mx-auto px-4">
                     <div className="flex flex-col md:flex-row items-center justify-between gap-4">
                         <div className="flex flex-wrap justify-center gap-3">
@@ -380,9 +381,9 @@ const Products = () => {
                                 <button
                                     key={category.id}
                                     onClick={() => setActiveCategory(category.id)}
-                                    className={`px-4 py-2 rounded-lg font-semibold transition-all duration-200 text-sm ${activeCategory === category.id
-                                        ? 'bg-slate-900 text-white shadow-md'
-                                        : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+                                    className={`px-5 py-2.5 rounded-xl font-bold transition-all duration-200 text-sm ${activeCategory === category.id
+                                        ? 'btn-glossy-blue text-white'
+                                        : 'bg-white/80 text-blue-900 hover:bg-white border-2 border-blue-200'
                                         }`}
                                 >
                                     <span className="mr-1">{category.emoji}</span>
@@ -392,13 +393,13 @@ const Products = () => {
                         </div>
 
                         <div className="relative w-full md:w-64">
-                            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400" size={18} />
+                            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-blue-500" size={18} />
                             <input
                                 type="text"
                                 placeholder="Search products..."
                                 value={searchTerm}
                                 onChange={(e) => setSearchTerm(e.target.value)}
-                                className="w-full pl-10 pr-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-500 text-sm"
+                                className="w-full pl-10 pr-4 py-2.5 border-2 border-blue-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm bg-white/80 backdrop-blur-sm"
                             />
                         </div>
                     </div>
@@ -406,39 +407,39 @@ const Products = () => {
             </section>
 
             {/* Products Grid */}
-            <section className="py-8 bg-slate-50">
+            <section className="py-10">
                 <div className="container mx-auto px-4">
                     <div className="mb-6">
-                        <p className="text-slate-600">Showing {filteredProducts.length} products</p>
+                        <p className="text-blue-900 font-semibold">Showing {filteredProducts.length} products</p>
                     </div>
 
-                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5">
                         {filteredProducts.map((product, index) => (
                             <motion.div
                                 key={product.id}
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.3, delay: index * 0.02 }}
-                                className="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-xl transition-all duration-300 border border-slate-200 cursor-pointer group"
+                                className="premium-card rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 cursor-pointer group transform hover:-translate-y-1"
                                 onClick={() => setSelectedProduct(product)}
                             >
-                                <div className="relative overflow-hidden bg-slate-100 h-48">
+                                <div className="relative overflow-hidden bg-gradient-to-br from-white to-blue-50 h-48">
                                     <img
                                         src={product.image}
                                         alt={product.name}
                                         className="w-full h-full object-contain p-4 group-hover:scale-110 transition-transform duration-300"
                                     />
-                                    <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300 flex items-center justify-center">
-                                        <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-semibold">
+                                    <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
+                                        <span className="text-white font-bold text-sm bg-blue-600/80 px-4 py-2 rounded-full backdrop-blur-sm">
                                             View Details
                                         </span>
                                     </div>
                                 </div>
-                                <div className="p-3">
-                                    <h3 className="font-semibold text-sm mb-1 text-slate-900 line-clamp-2 h-10">
+                                <div className="p-4 bg-white/60 backdrop-blur-sm">
+                                    <h3 className="font-bold text-sm mb-1 text-blue-900 line-clamp-2 h-10">
                                         {product.name}
                                     </h3>
-                                    <p className="text-slate-900 font-bold text-lg">{product.price}</p>
+                                    <p className="text-glossy-gold font-bold text-lg">{product.price}</p>
                                 </div>
                             </motion.div>
                         ))}
@@ -453,49 +454,49 @@ const Products = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4"
+                        className="fixed inset-0 bg-blue-900/30 backdrop-blur-sm z-50 flex items-center justify-center p-4"
                         onClick={() => setSelectedProduct(null)}
                     >
                         <motion.div
                             initial={{ scale: 0.9, opacity: 0 }}
                             animate={{ scale: 1, opacity: 1 }}
                             exit={{ scale: 0.9, opacity: 0 }}
-                            className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+                            className="premium-card rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
                             onClick={(e) => e.stopPropagation()}
                         >
-                            <div className="sticky top-0 bg-white border-b border-slate-200 p-4 flex justify-between items-center z-10">
-                                <h2 className="text-2xl font-bold text-slate-900">{selectedProduct.name}</h2>
+                            <div className="sticky top-0 glossy-white border-b-2 border-amber-200 p-5 flex justify-between items-center z-10">
+                                <h2 className="text-2xl font-bold text-glossy-blue">{selectedProduct.name}</h2>
                                 <button
                                     onClick={() => setSelectedProduct(null)}
-                                    className="p-2 hover:bg-slate-100 rounded-full transition-colors"
+                                    className="p-2 hover:bg-blue-100 rounded-full transition-colors text-blue-900"
                                 >
                                     <X size={24} />
                                 </button>
                             </div>
 
-                            <div className="p-6">
+                            <div className="p-8">
                                 <div className="grid md:grid-cols-2 gap-8">
-                                    <div className="bg-slate-50 rounded-xl p-8 flex items-center justify-center">
+                                    <div className="bg-gradient-to-br from-white to-blue-50 rounded-2xl p-8 flex items-center justify-center border-2 border-blue-100">
                                         <img
                                             src={selectedProduct.image}
                                             alt={selectedProduct.name}
-                                            className="max-w-full max-h-96 object-contain"
+                                            className="max-w-full max-h-96 object-contain drop-shadow-lg"
                                         />
                                     </div>
 
                                     <div>
                                         <div className="mb-6">
-                                            <p className="text-3xl font-bold text-slate-900 mb-2">{selectedProduct.price}</p>
-                                            <p className="text-slate-600">{selectedProduct.description}</p>
+                                            <p className="text-4xl font-bold text-glossy-gold mb-3">{selectedProduct.price}</p>
+                                            <p className="text-blue-800 text-lg">{selectedProduct.description}</p>
                                         </div>
 
                                         <div className="mb-6">
-                                            <h3 className="text-lg font-bold text-slate-900 mb-3">Key Features</h3>
-                                            <ul className="space-y-2">
+                                            <h3 className="text-xl font-bold text-blue-900 mb-4">Key Features</h3>
+                                            <ul className="space-y-3">
                                                 {selectedProduct.features.map((feature, index) => (
-                                                    <li key={index} className="flex items-start gap-2">
-                                                        <span className="text-green-600 mt-1">✓</span>
-                                                        <span className="text-slate-700">{feature}</span>
+                                                    <li key={index} className="flex items-start gap-3">
+                                                        <span className="text-amber-500 mt-1 text-xl">✓</span>
+                                                        <span className="text-blue-900 font-medium">{feature}</span>
                                                     </li>
                                                 ))}
                                             </ul>
@@ -504,14 +505,14 @@ const Products = () => {
                                         <div className="flex gap-3">
                                             <button
                                                 onClick={() => handleBuyWhatsApp(selectedProduct.name)}
-                                                className="flex-1 bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-xl font-semibold transition-colors duration-200 flex items-center justify-center gap-2"
+                                                className="flex-1 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-6 py-4 rounded-2xl font-bold transition-all duration-200 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl"
                                             >
-                                                <MessageCircle size={20} />
+                                                <MessageCircle size={22} />
                                                 Buy via WhatsApp
                                             </button>
                                             <a
                                                 href="/contact"
-                                                className="flex-1 bg-slate-900 hover:bg-slate-800 text-white px-6 py-3 rounded-xl font-semibold transition-colors duration-200 text-center"
+                                                className="flex-1 btn-glossy-blue text-white px-6 py-4 rounded-2xl font-bold text-center"
                                             >
                                                 Contact Us
                                             </a>
@@ -525,20 +526,20 @@ const Products = () => {
             </AnimatePresence>
 
             {/* CTA Section */}
-            <section className="bg-white py-8 border-t border-slate-200">
+            <section className="glossy-white py-12 border-t-2 border-amber-200">
                 <div className="container mx-auto px-4 text-center">
-                    <h2 className="text-2xl font-bold text-slate-900 mb-2">Need a Custom Solution?</h2>
-                    <p className="text-slate-600 mb-4">Contact us for personalized quotes and bulk orders</p>
-                    <div className="flex flex-wrap justify-center gap-3">
+                    <h2 className="text-3xl font-bold text-glossy-blue mb-3">Need a Custom Solution?</h2>
+                    <p className="text-blue-800 mb-6 text-lg">Contact us for personalized quotes and bulk orders</p>
+                    <div className="flex flex-wrap justify-center gap-4">
                         <a
                             href="/contact"
-                            className="inline-block bg-slate-900 text-white px-6 py-3 rounded-xl font-semibold hover:bg-slate-800 transition-colors duration-200"
+                            className="btn-glossy-blue text-white px-8 py-4 rounded-2xl font-bold inline-block"
                         >
                             Get in Touch
                         </a>
                         <a
                             href="tel:+919842250600"
-                            className="inline-block bg-white text-slate-900 px-6 py-3 rounded-xl font-semibold hover:bg-slate-100 transition-colors duration-200 border-2 border-slate-900"
+                            className="btn-glossy-gold text-white px-8 py-4 rounded-2xl font-bold inline-block"
                         >
                             📞 Call Now
                         </a>
