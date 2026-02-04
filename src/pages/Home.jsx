@@ -1,25 +1,22 @@
 import { motion } from 'framer-motion';
-import { Building2, GraduationCap, Baby, ArrowRight, CheckCircle, Star, Award, TrendingUp } from 'lucide-react';
+import { Building2, GraduationCap, Baby, ArrowRight, CheckCircle, Star, Award, TrendingUp, Briefcase, BookOpen, Microscope, Rocket } from 'lucide-react';
 
 const Home = () => {
     const sectors = [
         {
-            icon: <Building2 size={40} />,
-            emoji: '🏢',
+            icon: <Building2 size={48} className="text-blue-600" />,
             title: 'Corporate',
             description: 'Modern office furniture and workstation solutions',
             features: ['Executive Chairs', 'Modular Workstations', 'Conference Tables'],
         },
         {
-            icon: <GraduationCap size={40} />,
-            emoji: '🏫',
+            icon: <GraduationCap size={48} className="text-blue-600" />,
             title: 'Institutional',
             description: 'Complete educational infrastructure for schools and colleges',
             features: ['Student Desks', 'Lab Tables', 'Library Furniture'],
         },
         {
-            icon: <Baby size={40} />,
-            emoji: '🛝',
+            icon: <Baby size={48} className="text-blue-600" />,
             title: 'Play School',
             description: 'Safe and engaging play equipment for early learning',
             features: ['Slides & Swings', 'Indoor Play Items', 'Child-Safe Furniture'],
@@ -118,15 +115,14 @@ const Home = () => {
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
                                 className="premium-card p-8 rounded-2xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
                             >
-                                <div className="flex items-center gap-3 mb-4">
-                                    <span className="text-5xl">{sector.emoji}</span>
-                                    <div className="text-blue-600">
+                                <div className="flex items-center gap-4 mb-4">
+                                    <div className="bg-blue-50 p-3 rounded-2xl">
                                         {sector.icon}
                                     </div>
+                                    <h3 className="text-2xl font-bold text-blue-900">
+                                        {sector.title}
+                                    </h3>
                                 </div>
-                                <h3 className="text-2xl font-bold mb-3 text-blue-900">
-                                    {sector.title}
-                                </h3>
                                 <p className="text-blue-800 mb-4">{sector.description}</p>
                                 <ul className="space-y-2">
                                     {sector.features.map((feature, idx) => (
@@ -161,10 +157,10 @@ const Home = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                         {[
-                            { name: 'Executive Chairs', code: 'EC-501 Series', price: 'From ₹8,000', emoji: '💼' },
-                            { name: 'Student Desks', code: 'SD-1201 Series', price: 'From ₹3,500', emoji: '📚' },
-                            { name: 'Play Slides', code: 'Multiple Variants', price: 'From ₹2,040', emoji: '🛝' },
-                            { name: 'Lab Tables', code: 'LT-1401 Series', price: 'From ₹12,000', emoji: '🔬' },
+                            { name: 'Executive Chairs', code: 'EC-501 Series', price: 'From ₹8,000', icon: <Briefcase size={40} className="text-amber-500" /> },
+                            { name: 'Student Desks', code: 'SD-1201 Series', price: 'From ₹3,500', icon: <BookOpen size={40} className="text-amber-500" /> },
+                            { name: 'Play Slides', code: 'Multiple Variants', price: 'From ₹2,040', icon: <Rocket size={40} className="text-amber-500" /> },
+                            { name: 'Lab Tables', code: 'LT-1401 Series', price: 'From ₹12,000', icon: <Microscope size={40} className="text-amber-500" /> },
                         ].map((product, index) => (
                             <motion.div
                                 key={index}
@@ -174,10 +170,14 @@ const Home = () => {
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
                                 className="premium-card p-6 rounded-2xl hover:shadow-2xl transition-all transform hover:-translate-y-1"
                             >
-                                <div className="text-5xl mb-3 text-center">{product.emoji}</div>
-                                <h3 className="font-bold text-lg text-blue-900 mb-1">{product.name}</h3>
-                                <p className="text-sm text-blue-700 mb-2">{product.code}</p>
-                                <p className="text-glossy-gold font-bold text-lg">{product.price}</p>
+                                <div className="mb-4 flex justify-center">
+                                    <div className="bg-amber-50 p-4 rounded-full">
+                                        {product.icon}
+                                    </div>
+                                </div>
+                                <h3 className="font-bold text-lg text-blue-900 mb-1 text-center">{product.name}</h3>
+                                <p className="text-sm text-blue-700 mb-2 text-center">{product.code}</p>
+                                <p className="text-glossy-gold font-bold text-lg text-center">{product.price}</p>
                             </motion.div>
                         ))}
                     </div>

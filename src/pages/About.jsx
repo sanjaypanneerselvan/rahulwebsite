@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Award, Shield, Users, Sparkles, CheckCircle, Target, Heart, Zap } from 'lucide-react';
+import { Award, Shield, Users, Sparkles, CheckCircle, Target, Heart, Zap, GraduationCap, Building2, Baby, Trophy } from 'lucide-react';
 
 const About = () => {
     const features = [
@@ -10,9 +10,9 @@ const About = () => {
     ];
 
     const services = [
-        { icon: '🏫', title: 'Educational Institutions', items: ['Writing Boards', 'Notice Boards', 'Classroom Desks & Benches', 'Laboratory Furniture', 'Library Furniture'] },
-        { icon: '🏢', title: 'Office Solutions', items: ['Workstations', 'Office Chairs', 'Conference Tables', 'Storage Units', 'Reception Furniture'] },
-        { icon: '🛝', title: 'Play School Equipment', items: ['Slides & Swings', 'Outdoor Play Equipment', 'Indoor Play Items', 'Child-Friendly Furniture', 'Safety Mats'] },
+        { icon: <GraduationCap size={32} />, title: 'Educational Institutions', items: ['Writing Boards', 'Notice Boards', 'Classroom Desks & Benches', 'Laboratory Furniture', 'Library Furniture'] },
+        { icon: <Building2 size={32} />, title: 'Office Solutions', items: ['Workstations', 'Office Chairs', 'Conference Tables', 'Storage Units', 'Reception Furniture'] },
+        { icon: <Baby size={32} />, title: 'Play School Equipment', items: ['Slides & Swings', 'Outdoor Play Equipment', 'Indoor Play Items', 'Child-Friendly Furniture', 'Safety Mats'] },
     ];
 
     const values = [
@@ -94,7 +94,7 @@ const About = () => {
                                         className="bg-white border border-primary-100 p-5 rounded-xl hover:shadow-md transition-shadow"
                                     >
                                         <div className="flex items-center gap-3 mb-3">
-                                            <span className="text-3xl">{service.icon}</span>
+                                            <span className="text-primary-600">{service.icon}</span>
                                             <h3 className="font-bold text-lg text-slate-900">{service.title}</h3>
                                         </div>
                                         <ul className="grid grid-cols-2 gap-2">
@@ -140,7 +140,9 @@ const About = () => {
                                 viewport={{ once: true }}
                                 className="bg-slate-900 text-white rounded-xl p-6 text-center"
                             >
-                                <div className="text-5xl mb-3">🏆</div>
+                                <div className="flex justify-center mb-3">
+                                    <Trophy size={48} className="text-amber-400" />
+                                </div>
                                 <h2 className="text-3xl font-bold mb-2">Since 2006</h2>
                                 <p className="text-gray-300 mb-4">Over 20 years of excellence</p>
                                 <div className="grid grid-cols-1 gap-3 text-sm">

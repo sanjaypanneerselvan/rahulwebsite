@@ -5,7 +5,7 @@ const Footer = () => {
                 <div className="text-center space-y-2">
                     <p className="text-sm text-blue-900 font-bold">© 2026 City Office Needs. All rights reserved.</p>
                     <p className="text-xs text-blue-700">
-                        Designed and Developed by <span className="font-bold text-glossy-gold">Sanjay Panneerselvan</span>
+                        Designed and Developed by <span className="font-bold text-glossy-gold">Monika P</span>
                     </p>
                 </div>
             </div>

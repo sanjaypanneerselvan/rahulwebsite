@@ -42,22 +42,19 @@ ${formData.message}`;
 
     const contactInfo = [
         {
-            icon: <MapPin size={24} />,
-            emoji: '📍',
+            icon: <MapPin size={28} className="text-primary-600" />,
             title: 'Visit Us',
             content: '526, First Floor, Aazhi Dental Care, Opp. NSR Bakery, Marudhamalai Main Road, P.N. Pudur, Coimbatore - 641041',
             link: null,
         },
         {
-            icon: <Phone size={24} />,
-            emoji: '📞',
+            icon: <Phone size={28} className="text-primary-600" />,
             title: 'Call Us',
             content: '+91 98422 50600',
             link: 'tel:+919842250600',
         },
         {
-            icon: <Mail size={24} />,
-            emoji: '📧',
+            icon: <Mail size={28} className="text-primary-600" />,
             title: 'Email Us',
             content: 'cityofficeneeds@gmail.com',
             link: 'mailto:cityofficeneeds@gmail.com',
@@ -98,24 +95,21 @@ ${formData.message}`;
                                     {contactInfo.map((info, index) => (
                                         <div
                                             key={index}
-                                            className="flex gap-3 bg-white p-4 rounded-xl shadow-sm border border-primary-100 hover:shadow-md transition-shadow"
+                                            className="flex gap-4 bg-white p-5 rounded-xl shadow-sm border border-primary-100 hover:shadow-md transition-shadow group"
                                         >
                                             <div className="flex-shrink-0">
-                                                <div className="bg-primary-100 text-primary-600 p-3 rounded-lg">
+                                                <div className="bg-primary-50 p-3 rounded-xl group-hover:bg-primary-100 transition-colors">
                                                     {info.icon}
                                                 </div>
                                             </div>
                                             <div className="flex-grow">
-                                                <div className="flex items-center gap-2 mb-1">
-                                                    <span className="text-xl">{info.emoji}</span>
-                                                    <h3 className="font-semibold text-slate-900">{info.title}</h3>
-                                                </div>
+                                                <h3 className="font-bold text-slate-900 text-lg mb-1">{info.title}</h3>
                                                 {info.link ? (
-                                                    <a href={info.link} className="text-sm text-slate-600 hover:text-primary-600 transition-colors">
+                                                    <a href={info.link} className="text-sm text-slate-600 hover:text-primary-600 transition-colors leading-relaxed block">
                                                         {info.content}
                                                     </a>
                                                 ) : (
-                                                    <p className="text-sm text-slate-600">{info.content}</p>
+                                                    <p className="text-sm text-slate-600 leading-relaxed">{info.content}</p>
                                                 )}
                                             </div>
                                         </div>
@@ -153,13 +147,20 @@ ${formData.message}`;
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                             >
-                                <div className="bg-gradient-to-br from-primary-100 to-primary-200 rounded-xl h-48 flex items-center justify-center shadow-sm">
-                                    <div className="text-center text-primary-700">
-                                        <MapPin size={40} className="mx-auto mb-2" />
-                                        <p className="font-semibold">Google Maps</p>
-                                        <p className="text-sm">Coimbatore, Tamil Nadu</p>
+                                <a
+                                    href="https://maps.app.goo.gl/WUfV7FnTiGfZYUSx8?g_st=aw"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="block group"
+                                >
+                                    <div className="bg-gradient-to-br from-primary-100 to-primary-200 rounded-xl h-48 flex items-center justify-center shadow-sm group-hover:shadow-md transition-all border border-primary-200 group-hover:border-primary-300">
+                                        <div className="text-center text-primary-700 group-hover:text-primary-800 transition-colors">
+                                            <MapPin size={40} className="mx-auto mb-2 transform group-hover:scale-110 transition-transform" />
+                                            <p className="font-semibold">View on Google Maps</p>
+                                            <p className="text-sm">Coimbatore, Tamil Nadu</p>
+                                        </div>
                                     </div>
-                                </div>
+                                </a>
                             </motion.div>
                         </div>
 
