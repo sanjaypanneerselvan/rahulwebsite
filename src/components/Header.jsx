@@ -35,8 +35,8 @@ const Header = () => {
                                 key={link.path}
                                 to={link.path}
                                 className={`hover:text-blue-700 transition-all duration-200 font-semibold text-sm ${isActive(link.path)
-                                        ? 'text-glossy-gold border-b-2 border-amber-500 pb-1'
-                                        : 'text-blue-900'
+                                    ? 'text-glossy-gold border-b-2 border-amber-500 pb-1'
+                                    : 'text-blue-900'
                                     }`}
                             >
                                 {link.name}

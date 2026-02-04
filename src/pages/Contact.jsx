@@ -19,7 +19,24 @@ const Contact = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        alert('Thank you for your message! We will get back to you soon.');
+
+        // Format message for WhatsApp
+        const whatsappNumber = '919842250600'; // Your WhatsApp number
+        const message = `Hello! I'm ${formData.name}
+
+📧 Email: ${formData.email}
+📞 Phone: ${formData.phone}
+
+Message:
+${formData.message}`;
+
+        // Encode the message for URL
+        const encodedMessage = encodeURIComponent(message);
+
+        // Open WhatsApp with pre-filled message
+        window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
+
+        // Reset form
         setFormData({ name: '', email: '', phone: '', message: '' });
     };
 
