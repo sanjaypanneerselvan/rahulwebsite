@@ -17,7 +17,7 @@ const Header = () => {
     const isActive = (path) => location.pathname === path;
 
     return (
-        <header className="glass sticky top-0 z-50 shadow-xl border-b-2 border-white/30">
+        <header className="glass relative md:sticky md:top-0 z-50 shadow-xl border-b-2 border-white/30">
             <nav className="container mx-auto px-4 py-3">
                 <div className="flex items-center justify-between">
                     {/* Logo */}
