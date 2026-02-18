@@ -577,12 +577,12 @@ const Products = () => {
             <section className="py-4 glass sticky top-[65px] z-40 border-b-2 border-white/30 shadow-lg">
                 <div className="container mx-auto px-4">
                     <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-                        <div className="flex flex-wrap justify-center gap-3">
+                        <div className="flex flex-nowrap md:flex-wrap overflow-x-auto md:overflow-visible w-full md:w-auto justify-start md:justify-center gap-3 pb-2 md:pb-0 no-scrollbar px-1">
                             {categories.map((category) => (
                                 <button
                                     key={category.id}
                                     onClick={() => setActiveCategory(category.id)}
-                                    className={`px-5 py-2.5 rounded-xl font-bold transition-all duration-200 text-sm ${activeCategory === category.id
+                                    className={`px-5 py-2.5 rounded-xl font-bold transition-all duration-200 text-sm whitespace-nowrap flex-shrink-0 ${activeCategory === category.id
                                         ? 'btn-glossy-blue text-white'
                                         : 'bg-white/80 text-blue-900 hover:bg-white border-2 border-blue-200'
                                         }`}
