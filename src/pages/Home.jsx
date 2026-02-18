@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { Building2, GraduationCap, Baby, ArrowRight, CheckCircle, Star, Award, TrendingUp, Briefcase, BookOpen, Microscope, Rocket } from 'lucide-react';
 
 const Home = () => {
@@ -51,19 +52,19 @@ const Home = () => {
                                 Providing high-quality educational boards, furniture, and play equipment since 2006
                             </p>
                             <div className="flex flex-wrap gap-4">
-                                <a
-                                    href="/products"
+                                <Link
+                                    to="/products"
                                     className="btn-glossy-gold text-white px-8 py-4 rounded-2xl font-bold inline-flex items-center gap-2"
                                 >
                                     Explore Products
                                     <ArrowRight size={22} />
-                                </a>
-                                <a
-                                    href="/contact"
+                                </Link>
+                                <Link
+                                    to="/contact"
                                     className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm text-white px-8 py-4 rounded-2xl font-bold hover:bg-white/30 transition-all duration-200 border-2 border-white/30"
                                 >
                                     Get Quote
-                                </a>
+                                </Link>
                             </div>
                         </motion.div>
 
@@ -183,13 +184,13 @@ const Home = () => {
                     </div>
 
                     <div className="text-center mt-8">
-                        <a
-                            href="/products"
+                        <Link
+                            to="/products"
                             className="btn-glossy-blue text-white px-8 py-4 rounded-2xl font-bold inline-flex items-center gap-2"
                         >
                             View All Products
                             <ArrowRight size={22} />
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </section>
@@ -246,13 +247,13 @@ const Home = () => {
                             Contact us today for customized infrastructure solutions
                         </p>
                         <div className="flex flex-wrap justify-center gap-4">
-                            <a
-                                href="/contact"
+                            <Link
+                                to="/contact"
                                 className="btn-glossy-gold text-white px-8 py-4 rounded-2xl font-bold inline-flex items-center gap-2"
                             >
                                 Get in Touch
                                 <ArrowRight size={22} />
-                            </a>
+                            </Link>
                             <a
                                 href="tel:+919842250600"
                                 className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm text-white px-8 py-4 rounded-2xl font-bold hover:bg-white/30 transition-all duration-200 border-2 border-white/30"
