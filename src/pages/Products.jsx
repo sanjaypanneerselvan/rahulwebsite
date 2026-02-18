@@ -574,7 +574,7 @@ const Products = () => {
             </section>
 
             {/* Filter Bar */}
-            <section className="py-4 glass sticky top-[65px] z-40 border-b-2 border-white/30 shadow-lg">
+            <section className="py-4 glass relative z-40 border-b-2 border-white/30 shadow-lg">
                 <div className="container mx-auto px-4">
                     <div className="flex flex-col md:flex-row items-center justify-between gap-4">
                         <div className="flex flex-nowrap md:flex-wrap overflow-x-auto md:overflow-visible w-full md:w-auto justify-start md:justify-center gap-3 pb-2 md:pb-0 no-scrollbar px-1">
